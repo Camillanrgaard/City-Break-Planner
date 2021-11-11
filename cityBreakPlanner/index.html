@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>City Break Planner</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/png" href="img/logo-white.png" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://code.iconify.design/2/2.0.4/iconify.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+  </head>
+  <body onhashchange="pageChange()">
+    <!------------------- TABBAR NAVIGATION ------------------->
+    <header class="topbar">
+      <h1>City Break Planner</h1>
+    </header>
+    <nav class="tabbar">
+      <a href="#detailview"
+        ><span class="iconify" data-icon="icons8:adventures"></span
+      ></a>
+      <a href="#home"
+        ><span class="iconify" data-icon="healthicons:city-outline"></span
+      ></a>
+      <a href="#liked"
+        ><span class="iconify" data-icon="bytesize:heart"></span
+      ></a>
+    </nav>
+
+    <!------------------- PAGES ------------------->
+    <!-- LOGIN -->
+    <section id="login" class="page">
+      <h4>THE LAND<br>OF EVERYDAY<br>WONDER </h4>
+      <img src="img/logo-white.png" class="logoImg" alt="logo">
+      <div class="hvidBoks">
+        <h1 class="loginHeader">LOG IND
+
+          <div class="lang-menu">
+            <div class="selected-lang">
+                <img id="selected_language" src="Denmark.png" alt="Denmark">
+            </div>
+            <ul>
+                <li>
+                    <img class="small_language" src="Denmark.png" alt="Denmark">
+                </li>
+                <li>
+                    <img class="small_language" src="UK.png" alt="UK">
+                </li>
+            </ul>
+        </div>
+
+      <p class="hejText">Hej og velkommen til City Break Planner</p>
+      <p class="feltHead">EMAIL</p>
+      <input type="text" placeholder="Din email" class="loginFelt">
+      <p class="feltHead">ADGANGSKODE</p>
+      <input type="password" placeholder="Din adgangskode" class="loginFelt">
+      <a href="#" rel="link" class="kodeLink">Glemt adgangskode?</a>
+      <a href="#home"rel="forside" class="loginKnap">LOG IND!</a>
+      <p>_____________ eller log ind med Google _____________</p>
+      <a href="#" rel="link" class="google">Google</a>
+      <p>Ikke oprettet endnu? <a href="#" rel="link" class="registrerLink">Lav din bruger her</a></p>
+      
+      </div>
+      </section>
+
+    <!------ categories page ------>
+    <section id="categories" class="page">
+      <div id="grid-categories" class="grid-container"></div>
+    </section>
+
+    <!------ HOME PAGE ------>
+    <section id="home" class="page">
+      <h2>Hi...</h2>
+      <h3>Udforsk Storbyen</h3>
+
+      <input
+        class="search-bar"
+        type="search"
+        placeholder="	&#x1F50E;&#xFE0E; Search..."
+        onkeyup="search(this.value)"
+      />
+      <div class="search-result" id="search-result"></div>
+
+      <section class="homepage">
+        <p>PLANLÆG DIN NÆSTE FERIE</p>
+        <div class="homebox1">
+          <div class="aarhusbox citybox">
+            <span class="iconify iconify3" data-icon="bytesize:heart"></span>
+            <a href="#detailview">
+              <div class="box1txt">
+                <p>AARHUS</p>
+              </div>
+            </a>
+          </div>
+          <div class="kbhbox citybox">
+            <span class="iconify iconify3" data-icon="bytesize:heart"></span>
+            <a href="#detailview2">
+            <div class="box1txt">
+              <p>KØBENHAVN</p>
+            </div></a>
+          </div>
+          <div class="odensebox citybox">
+            <span class="iconify iconify3" data-icon="bytesize:heart"></span>
+            <div class="box1txt">
+              <a href="#detailview2">
+              <p>ODENSE</p>
+            </a></div>
+          </div>
+          <div class="aalborgbox citybox">
+            <span class="iconify iconify3" data-icon="bytesize:heart"></span>
+            <div class="box1txt">
+              <a href="#detailview2">
+              <p>AALBORG</p>
+            </div>
+          </a>
+          </div>
+        </div>
+
+        <p>FIND INSPIRATION</p>
+        <div
+          id="grid-categories-home"
+          class="grid-container grid-categories-home">
+          <div id="homebox1"></div>
+        </div>
+
+        <p>DINE FERIER</p>
+        <div class="citybox3">
+          <span
+            class="iconify iconify2"
+            data-icon="akar-icons:circle-plus"
+          ></span>
+          <div class="box1txt">
+            <p>TILFØJ FLERE</p>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!------------------- DETAIL VIEW ------------------->
+    <section id="detailview" class="page">
+      <div class="detail-top">
+        <a href="#home"><span class="iconify iconify4" data-icon="uil:angle-left-b"></span></a>
+        <span class="iconify iconify4" data-icon="bytesize:heart"></span>
+      </div>
+      <div class="detail-hero">
+        <div class="detail-head">
+          <h3>AARHUS</h3>
+        </div>
+      </div>
+      <div class="page2">
+        <div class="btn-flex">
+          <button class="iconify-btn">
+            <span class="iconify iconify5" data-icon="cil:location-pin"></span
+            >VIS KORT
+          </button>
+          <button class="iconify-btn">
+            <span
+              class="iconify iconify5"
+              data-icon="akar-icons:star"
+              style="color: #dba200"
+            ></span
+            >RATING
+          </button>
+        </div>
+        <div class="detail-p">
+          <p>
+            Jyllands kulturhovedstad Aarhus er en sprudlende universitetsby med
+            en perfekt bevaret gammel bydel og de gamle landsbyhuse i Den Gamle
+            By.
+          </p>
+        </div>
+  
+        <div class="btn-flex btn-flex2">
+          <button onclick="restaurantOnClick()" class="iconify-btn2">
+            <span
+              class="iconify iconify6"
+              data-icon="cil:dinner"
+            ></span
+            >Restauranter
+          </button>
+          <button onclick="activitiesOnClick()" class="iconify-btn2">
+            <span
+              class="iconify iconify6"
+              data-icon="entypo:ticket"
+        
+            ></span
+            >Aktiviteter
+          </button>
+          <button onclick="cultureOnClick()" class="iconify-btn2">
+            <span
+              class="iconify iconify6"
+              data-icon="carbon:theater"
+            ></span
+            >Kultur
+          </button>
+        </div>
+        </div>
+<div class="page2">
+  <h3>RESTAURANTER</h3>
+    <div  id="restaurantview">
+      
+    </div>
+  </div>
+
+    </section>
+
+  <!-- ERROR -->
+    <section id="detailview2" class="page">
+      <div class="detail-top">
+        <a href="#home"><span class="iconify iconify4" data-icon="uil:angle-left-b"></span></a>
+        <span class="iconify iconify4" data-icon="bytesize:heart"></span>
+      </div>   
+      </section>
+
+    <!------ LIKED PAGE ------>
+    <section id="liked" class="page">
+      <div class="detail-top">
+      <a href="#home"><span class="iconify iconify4" data-icon="uil:angle-left-b"></span></a>
+      <a href="#login"><span class="iconify iconify4" data-icon="icon-park-outline:logout"></span></a>
+    </div>
+    <div class="page3">
+      <h3 class="liked-h3">PLANLÆG DIN FERIE</h3>
+      <div class="btn-flex btn-flex2">
+          <button class="iconify-btn2">
+            <span class="iconify iconify6" data-icon="fluent:luggage-24-regular"></span>FERIER
+          </button>
+          <button class="iconify-btn2">
+            <span class="iconify iconify6" data-icon="healthicons:city-outline"></span>BYER
+          </button>
+          <button class="iconify-btn2">
+            <span class="iconify iconify6" data-icon="icons8:adventures"></span>OPLEVELSER
+          </button>
+        </div>
+        
+        <div>
+        <span class="iconify iconify7" data-icon="akar-icons:trash-can"></span>
+        <img src="img/aarhus.jpg" class="liked-img" alt="">
+        <div class="box2txt">
+              <p>AARHUS</p>
+            </div>
+        </div>
+        <div>
+        <span class="iconify iconify7" data-icon="akar-icons:trash-can"></span>
+        <img src="img/aarhus.jpg" class="liked-img" alt="">
+        <div class="box2txt">
+              <p>AARHUS</p>
+            </div>
+       </div>
+       <div>
+        <span class="iconify iconify7" data-icon="akar-icons:trash-can"></span>
+        <img src="img/aarhus.jpg" class="liked-img" alt="">
+        <div class="box2txt">
+              <p>AARHUS</p>
+            </div>
+       </div>
+      </div>
+    </section>
+    
+    <!------------------- FOOTER ------------------->
+    <footer>©Copyright 2021. All rights reserved.</footer>
+
+    <!-- <script type="text/javascript" src="categories.json"></script>
+        <script type="text/javascript" src="data.json"></script>-->
+    <script src="js/spa.js"></script>
+    <script src="data.json"></script>
+    <script src="js/main.js" async defer></script>
+
+  </body>
+</html>
